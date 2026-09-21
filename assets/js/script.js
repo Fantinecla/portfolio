@@ -33,7 +33,7 @@
       'work.blackbox.category': 'Game Jam &middot; Jeu narratif (RPG Maker)',
       'work.blackbox.title': 'Blackbox',
 
-      'skills.title': 'Des <em>compétences</em>',
+      'skills.title': 'Mes <em>compétences</em>',
       'skills.cat.language': 'Langage',
       'skills.cat.framework': 'Framework',
       'skills.cat.data': 'Analyse et traitement de données',
@@ -104,7 +104,7 @@
       'info.year_label': 'Year',
       'info.tools_label': 'Tools',
 
-      'hero.tagline': '<em>Curious by nature</em>',
+      'hero.tagline': '<em>Feeling Curious?</em>',
 
       'about.title': 'Who <em>am I?</em>',
       'about.p1': "Passionate about human behaviour and the way we interact with what surrounds us, I design digital experiences centred on the user, at the crossroads of psychology, cognitive science and design. Curious by nature, I like to understand the \"why\" before sketching the \"how\".",
