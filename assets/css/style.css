@@ -442,8 +442,13 @@ img {
 
 .carousel {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 1.5rem;
+}
+
+.carousel > .carousel-dots {
+  flex-basis: 100%;
 }
 
 .carousel-arrow {
@@ -462,8 +467,9 @@ img {
 }
 
 .carousel-arrow:hover {
-  background-color: var(--color-text);
-  color: var(--color-white);
+  background-color: var(--color-yellow);
+  border-color: var(--color-yellow);
+  color: var(--color-text);
 }
 
 .carousel-viewport {
@@ -976,8 +982,8 @@ button.contact-link {
 }
 
 .gallery-carousel .carousel-arrow:hover {
-  background-color: var(--color-text);
-  color: var(--color-white);
+  background-color: var(--color-yellow);
+  color: var(--color-text);
 }
 
 .project-detail-gallery {
