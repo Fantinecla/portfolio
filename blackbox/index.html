@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fantine Portfolio</title>
+  <meta name="description" content="Blackbox — Création d'un jeu pour la Game Jam 2024, par Fantine Figuet, UX Designer.">
+  <link rel="icon" type="image/svg+xml" href="../assets/images/loco_icon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jura:wght@400;500;600;700&family=Merriweather:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+  <div id="navbar" data-root="../"></div>
+  <script src="../assets/js/navbar.js"></script>
+
+  <!-- Détail du projet -->
+  <article class="project-detail">
+    <a href="../index.html#travail" class="project-detail-back" aria-label="Retour à Mon travail">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <path d="M15 18l-6-6 6-6" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+
+    <p class="project-detail-category" data-i18n="blackbox.category">Game Jam &middot; Level design, scénario &amp; développement</p>
+    <h1 class="project-detail-title" data-i18n="blackbox.title">Création d'un jeu pour la Game Jam 2024</h1>
+
+    <div class="project-detail-intro project-detail-intro--stacked">
+      <div class="project-detail-hero">
+        <div class="project-detail-hero-media">
+          <img src="../assets/images/game_jam_2024/mots_bb.svg" alt="Écran principal du jeu Blackbox, style rétro pixel art" data-i18n-alt="blackbox.hero.alt">
+        </div>
+      </div>
+
+      <div class="project-detail-body">
+        <div class="project-detail-text">
+          <h2 class="project-detail-app-name">Blackbox</h2>
+          <p data-i18n="blackbox.p1">
+            J'ai participé à une Game Jam organisée par l'association EKOS de l'IDMC
+            à Nancy : 45h pour créer un jeu vidéo de A à Z. Mon équipe a choisi de
+            travailler sur RPG Maker, avec un style graphique rétro façon vieux jeux
+            vidéo. De mon côté, je me suis principalement occupée des décors, du
+            scénario, de la création d'easter eggs cachés un peu partout, et même
+            d'un peu de code !
+          </p>
+          <p data-i18n="blackbox.p2">
+            Blackbox raconte l'histoire d'un enquêteur qui pénètre dans le cerveau
+            d'un individu pour enquêter sur une affaire et retrouver des souvenirs
+            disparus. En explorant les différentes aires cérébrales, il découvre leur
+            fonction à travers des mini-jeux qui y font écho — par exemple, le lobe
+            frontal, associé à la mémoire de travail, prend la forme d'un memory game.
+            Le jeu avait pour objectif de
+            faciliter l'apprentissage des fonctions cérébrales grâce au storytelling
+            et à la gamification, en mêlant humour et esthétique rétro.
+          </p>
+          <p data-i18n="blackbox.p3">
+            Après 2 jours bien intenses (et peu de sommeil 😅), notre équipe a terminé
+            2ᵉ ! Une super expérience de créativité et de travail d'équipe.
+          </p>
+        </div>
+
+        <dl class="project-detail-infos">
+          <dt data-i18n="info.type_label">Type</dt>
+          <dd data-i18n="blackbox.info.type_value">Game Jam en équipe (45h)</dd>
+          <dt data-i18n="info.role_label">Rôle</dt>
+          <dd data-i18n="blackbox.info.role_value">Décors, scénario &amp; easter eggs</dd>
+          <dt data-i18n="info.year_label">Année</dt>
+          <dd>2024</dd>
+          <dt data-i18n="info.tools_label">Outils</dt>
+          <dd>RPG Maker</dd>
+        </dl>
+      </div>
+    </div>
+
+    <!-- Écrans du jeu -->
+    <div class="project-detail-gallery-header">
+      <h2 class="project-detail-gallery-title" data-i18n="gallery.title">Galerie</h2>
+    </div>
+
+    <div class="gallery-carousel">
+      <button class="carousel-arrow carousel-prev" aria-label="Capture précédente">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M15 18l-6-6 6-6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <div class="carousel-viewport">
+        <div class="carousel-track project-detail-gallery">
+          <img src="../assets/images/game_jam_2024/titre_bb.svg" alt="Écran titre du jeu Blackbox" data-i18n-alt="blackbox.gallery.alt1">
+          <img src="../assets/images/game_jam_2024/memo_blackbox.svg" alt="Écran mémo du jeu Blackbox" data-i18n-alt="blackbox.gallery.alt2">
+          <img src="../assets/images/game_jam_2024/mots_bb.svg" alt="Écran principal du jeu Blackbox, style rétro pixel art" data-i18n-alt="blackbox.hero.alt">
+          <img src="../assets/images/game_jam_2024/fin_bb.svg" alt="Écran de fin du jeu Blackbox" data-i18n-alt="blackbox.gallery.alt4">
+          <img src="../assets/images/game_jam_2024/portail_bb.svg" alt="Écran du portail dans le jeu Blackbox" data-i18n-alt="blackbox.gallery.alt3">
+        </div>
+      </div>
+      <button class="carousel-arrow carousel-next" aria-label="Capture suivante">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M9 18l6-6-6-6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <div class="carousel-dots" role="tablist" aria-label="Navigation de la galerie"></div>
+    </div>
+
+    <nav class="project-detail-nav project-detail-nav--prev-only">
+      <a href="../esante/index.html">
+        <span class="project-detail-nav-label" data-i18n="nav_arrows.prev_label">&larr; Précédent</span>
+        <span class="project-detail-nav-title" data-i18n="blackbox.nav.prev_title">Yee-Health</span>
+      </a>
+    </nav>
+  </article>
+
+  <footer class="footer">
+    <p>Fantine Figuet — Portfolio 2026</p>
+  </footer>
+
+  <script src="../assets/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fantine Portfolio</title>
+  <meta name="description" content="Création d'une application mobile d'e-santé, UX/UI Design & développement front-end, par Fantine Figuet, UX Designer.">
+  <link rel="icon" type="image/svg+xml" href="../assets/images/loco_icon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jura:wght@400;500;600;700&family=Merriweather:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+  <div id="navbar" data-root="../"></div>
+  <script src="../assets/js/navbar.js"></script>
+
+  <!-- Détail du projet -->
+  <article class="project-detail">
+    <a href="../index.html#travail" class="project-detail-back" aria-label="Retour à Mon travail">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <path d="M15 18l-6-6 6-6" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+
+    <p class="project-detail-category" data-i18n="esante.category">UX/UI Design &amp; Développement front-end</p>
+    <h1 class="project-detail-title" data-i18n="esante.title">Création d'une application mobile d'e-santé</h1>
+
+    <div class="project-detail-intro">
+      <div class="project-detail-hero">
+        <div class="phone-mockup" style="--phone-ratio: 0.34045;">
+          <div class="phone-mockup-screen">
+            <img src="../assets/images/esante/detail-activite-patient.svg" alt="Écran de détail d'un patient de l'application e-santé" data-i18n-alt="esante.hero.alt">
+          </div>
+        </div>
+      </div>
+
+      <div class="project-detail-body">
+        <div class="project-detail-text">
+          <h2 class="project-detail-app-name">Yee-Health</h2>
+          <p data-i18n="esante.p1">
+            Dans le cadre d'un projet de groupe, j'ai participé à la création d'une
+            application dédiée à la e-santé. Les fonctionnalités de l'application
+            avaient déjà été déterminées dans les consignes du projet : connexion,
+            inscription, ajout de patient, espace du médecin, liste des patients et
+            suivi des patients.
+          </p>
+          <p data-i18n="esante.p2">
+            Notre démarche a débuté par une veille concurrentielle afin d'analyser
+            les solutions existantes sur le marché, avant de concevoir les maquettes
+            sur Figma puis de développer l'application avec React, JavaScript et CSS.
+          </p>
+          <p data-i18n="esante.p3">
+            Au sein de l'équipe, j'étais responsable du design sur Figma ainsi que
+            du développement front-end du site, avec également une contribution
+            active sur la partie JavaScript.
+          </p>
+        </div>
+
+        <dl class="project-detail-infos">
+          <dt data-i18n="info.type_label">Type</dt>
+          <dd data-i18n="esante.info.type_value">Projet de groupe (école)</dd>
+          <dt data-i18n="info.role_label">Rôle</dt>
+          <dd data-i18n="esante.info.role_value">Design UX/UI (Figma) &amp; développement front-end</dd>
+          <dt data-i18n="info.year_label">Année</dt>
+          <dd>2025</dd>
+          <dt data-i18n="info.tools_label">Outils</dt>
+          <dd>Figma, React, JavaScript, CSS</dd>
+        </dl>
+      </div>
+    </div>
+
+    <!-- Écrans de l'application -->
+    <div class="project-detail-gallery-header">
+      <h2 class="project-detail-gallery-title" data-i18n="gallery.title">Galerie</h2>
+    </div>
+
+    <div class="gallery-carousel">
+      <button class="carousel-arrow carousel-prev" aria-label="Capture précédente">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M15 18l-6-6 6-6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <div class="carousel-viewport">
+        <div class="carousel-track project-detail-gallery">
+          <img src="../assets/images/esante/connexion.svg" alt="Écran de connexion de l'application" data-i18n-alt="esante.gallery.alt1">
+          <img src="../assets/images/esante/inscription.svg" alt="Écran d'inscription de l'application" data-i18n-alt="esante.gallery.alt2">
+          <img src="../assets/images/esante/ajout-nouveau-patient.svg" alt="Écran d'ajout d'un nouveau patient" data-i18n-alt="esante.gallery.alt3">
+          <img src="../assets/images/esante/compte-pro.svg" alt="Écran du compte pro" data-i18n-alt="esante.gallery.alt4">
+          <img src="../assets/images/esante/master.svg" alt="Écran principal de l'application" data-i18n-alt="esante.gallery.alt5">
+          <img src="../assets/images/esante/detail-activite-patient.svg" alt="Écran de détail d'un patient" data-i18n-alt="esante.gallery.alt6">
+        </div>
+      </div>
+      <button class="carousel-arrow carousel-next" aria-label="Capture suivante">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M9 18l6-6-6-6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <div class="carousel-dots" role="tablist" aria-label="Navigation de la galerie"></div>
+    </div>
+
+    <nav class="project-detail-nav">
+      <a href="../hookit/index.html">
+        <span class="project-detail-nav-label" data-i18n="nav_arrows.prev_label">&larr; Précédent</span>
+        <span class="project-detail-nav-title" data-i18n="esante.nav.prev_title">Hook'it</span>
+      </a>
+      <a href="../blackbox/index.html">
+        <span class="project-detail-nav-label" data-i18n="nav_arrows.next_label">Suivant &rarr;</span>
+        <span class="project-detail-nav-title" data-i18n="work.blackbox.title">Blackbox</span>
+      </a>
+    </nav>
+  </article>
+
+  <footer class="footer">
+    <p>Fantine Figuet — Portfolio 2026</p>
+  </footer>
+
+  <script src="../assets/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fantine Portfolio</title>
+  <meta name="description" content="Portfolio de Fantine Figuet, UX Designer.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/loco_icon.svg">
+
+  <!-- Polices Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jura:wght@400;500;600;700&family=Merriweather:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- =========================================================
+       BARRE DE MENU (injectée par assets/js/navbar.js)
+  ========================================================== -->
+  <div id="navbar" data-root="./"></div>
+  <script src="assets/js/navbar.js"></script>
+
+  <!-- =========================================================
+       1. HERO
+  ========================================================== -->
+  <section class="hero">
+    <div class="hero-mosaic" aria-hidden="true">
+      <div class="mosaic-item mosaic-1"></div>
+      <div class="mosaic-item mosaic-2"></div>
+      <div class="mosaic-item mosaic-3"></div>
+      <div class="mosaic-item mosaic-4"></div>
+      <div class="mosaic-item mosaic-5"></div>
+      <div class="mosaic-item mosaic-6"></div>
+      <div class="mosaic-item mosaic-7"></div>
+    </div>
+
+    <div class="hero-content">
+      <p class="hero-tagline" data-i18n="hero.tagline"><em>Curieux et curieuse</em></p>
+      <h1 class="hero-title">Fantine Figuet</h1>
+      <p class="hero-role">UX Designer</p>
+    </div>
+  </section>
+
+
+  <!-- =========================================================
+       2. SECTION "QUI SUIS-JE ?"
+  ========================================================== -->
+  <section id="qui-suis-je" class="about">
+    <div class="about-inner">
+
+      <div class="about-text">
+        <h2 class="section-title" data-i18n="about.title">Qui <em>suis-je ?</em></h2>
+
+        <p data-i18n="about.p1">
+          Passionnée par les comportements humains et la façon dont nous interagissons avec ce qui
+          nous entoure, je conçois des expériences numériques centrées sur
+          l'utilisateur, à la croisée de la psychologie, des sciences cognitives et du design.
+          Curieuse de nature, j'aime comprendre le "pourquoi" avant de dessiner le "comment".
+        </p>
+        <p data-i18n="about.p2">
+          Diplômée d'un Master en Sciences Cognitives, ma formation m'a aussi amenée à
+          l'intelligence artificielle, la programmation et l'analyse de données. Je travaille
+          aujourd'hui sur des projets variés, de la recherche utilisateur à la conception
+          d'interfaces ou d'expériences, toujours avec la même envie : créer des expériences
+          simples, utiles et agréables.
+        </p>
+
+        <div class="about-buttons">
+          <a href="#travail" class="btn btn-fill-yellow">See my works</a>
+          <a href="#contact" class="btn btn-outline-blue">Say hello</a>
+        </div>
+      </div>
+
+      <div class="about-image">
+        <img src="assets/images/fantine.png" alt="Photo de Fantine Figuet" class="about-photo">
+        <div class="about-photo-accent"></div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =========================================================
+       3. SECTION "MON TRAVAIL..."
+  ========================================================== -->
+  <section id="travail" class="work">
+    <div class="work-inner">
+    <h2 class="section-title" data-i18n="work.title">Mon <em>travail...</em></h2>
+
+    <div class="carousel carousel--work">
+      <button class="carousel-arrow carousel-prev" aria-label="Projet précédent">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M15 18l-6-6 6-6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+
+      <div class="carousel-viewport">
+        <ul class="carousel-track">
+          <!-- TODO: remplacer par les vrais projets (titre, catégorie, image) -->
+          <!-- Chaque carte renvoie vers sa propre page : monportfolio/projet1, /projet2, ... -->
+          <li class="project-card-item">
+            <a href="hookit/" class="project-card">
+              <img src="assets/images/hook_it/hifi/accueil.svg" alt="" class="project-image project-image--framed">
+              <p class="project-category" data-i18n="work.hookit.category">UX/UI Design &amp; Application mobile</p>
+              <h3 class="project-title" data-i18n="work.hookit.title">Hook'It</h3>
+            </a>
+          </li>
+          <li class="project-card-item">
+            <a href="esante/index.html" class="project-card">
+              <img src="assets/images/esante/connexion.svg" alt="" class="project-image project-image--framed">
+              <p class="project-category" data-i18n="work.esante.category">Application mobile</p>
+              <h3 class="project-title" data-i18n="work.esante.title">Yee-Health</h3>
+            </a>
+          </li>
+          <li class="project-card-item">
+            <a href="blackbox/index.html" class="project-card">
+              <img src="assets/images/game_jam_2024/mots_bb.svg" alt="" class="project-image">
+              <p class="project-category" data-i18n="work.blackbox.category">Game Jam · Jeu narratif</p>
+              <h3 class="project-title" data-i18n="work.blackbox.title">Blackbox</h3>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <button class="carousel-arrow carousel-next" aria-label="Projet suivant">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M9 18l6-6-6-6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="carousel-dots" role="tablist" aria-label="Navigation des projets"></div>
+    </div>
+  </section>
+
+
+  <!-- =========================================================
+       4. SECTION "COMPÉTENCES"
+  ========================================================== -->
+  <section id="competences" class="skills">
+    <div class="skills-inner">
+    <h2 class="section-title skills-title" data-i18n="skills.title">
+      Des <em>compétences</em>
+    </h2>
+
+    <div class="skills-categories">
+      <div class="skills-card">
+        <h3 class="skills-card-title" data-i18n="skills.cat.design">Design</h3>
+        <div class="skills-badges">
+          <span class="skill-tag" data-i18n="skills.tag.entretiens">Entretiens</span>
+          <span class="skill-tag" data-i18n="skills.tag.protocoles">Élaboration de protocoles</span>
+          <span class="skill-tag">Personas</span>
+          <span class="skill-tag">Customer experience maps</span>
+          <span class="skill-tag" data-i18n="skills.tag.tests_utilisateurs">Tests utilisateurs</span>
+          <span class="skill-tag" data-i18n="skills.tag.accessibilite">Accessibilité</span>
+          <span class="skill-tag">Wireframing</span>
+          <span class="skill-tag">Figma</span>
+          <span class="skill-tag">Canva</span>
+        </div>
+      </div>
+
+      <div class="skills-card">
+        <h3 class="skills-card-title" data-i18n="skills.cat.language">Langage</h3>
+        <div class="skills-badges">
+          <span class="skill-tag">HTML</span>
+          <span class="skill-tag">CSS</span>
+          <span class="skill-tag">TypeScript</span>
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">Dart</span>
+        </div>
+      </div>
+
+      <div class="skills-card">
+        <h3 class="skills-card-title" data-i18n="skills.cat.framework">Framework</h3>
+        <div class="skills-badges">
+          <span class="skill-tag">React</span>
+          <span class="skill-tag">Flutter</span>
+        </div>
+      </div>
+
+      <div class="skills-card">
+        <h3 class="skills-card-title" data-i18n="skills.cat.data">Analyse et traitement de données</h3>
+        <div class="skills-badges">
+          <span class="skill-tag">NumPy</span>
+          <span class="skill-tag">Pandas</span>
+          <span class="skill-tag">Scikit-learn</span>
+          <span class="skill-tag">Keras</span>
+          <span class="skill-tag">Matplotlib</span>
+        </div>
+      </div>
+
+      <div class="skills-card">
+        <h3 class="skills-card-title" data-i18n="skills.cat.other">Autres</h3>
+        <div class="skills-badges">
+          <span class="skill-tag">Notion</span>
+          <span class="skill-tag">Trello</span>
+          <span class="skill-tag">Klaxoon</span>
+          <span class="skill-tag">Google Workspace</span>
+          <span class="skill-tag" data-i18n="skills.tag.gestion_projet">Gestion de projet</span>
+          <span class="skill-tag">Machine Learning</span>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+
+  <!-- =========================================================
+       5. SECTION CONTACT
+  ========================================================== -->
+  <section id="contact" class="contact">
+    <h2 class="section-title contact-title">Contact</h2>
+
+    <!-- TODO: remplacer le lien "Mon CV" par le vrai PDF -->
+    <div class="contact-links">
+      <button type="button" class="contact-link contact-link--copy" data-copy="fantine.figuet08@gmail.com">
+        <span class="contact-link-label" data-i18n="contact.email_label">Email</span>
+        <span class="contact-link-value">fantine.figuet08@gmail.com</span>
+      </button>
+      <a href="https://www.linkedin.com/in/fantine-figuet" target="_blank" rel="noopener" class="contact-link">
+        <span class="contact-link-label">LinkedIn</span>
+        <span class="contact-link-value" data-i18n="contact.linkedin_value">Voir le profil</span>
+      </a>
+      <a href="#" target="_blank" rel="noopener" class="contact-link">
+        <span class="contact-link-label" data-i18n="footer.cv">Mon CV</span>
+        <span class="contact-link-value" data-i18n="contact.cv_value">Télécharger le PDF</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       6. FOOTER
+  ========================================================== -->
+  <footer class="footer">
+    <p>Fantine Figuet — Portfolio 2026</p>
+  </footer>
+
+  <script src="assets/js/script.js"></script>
+</body>
+</html>

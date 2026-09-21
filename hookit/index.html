@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fantine Portfolio</title>
+  <meta name="description" content="Création d'une application mobile sur le crochet, UX/UI Design, développement front-end & back-end.">
+  <link rel="icon" type="image/svg+xml" href="../assets/images/loco_icon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jura:wght@400;500;600;700&family=Merriweather:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+  <div id="navbar" data-root="../"></div>
+  <script src="../assets/js/navbar.js"></script>
+
+  <!-- Détail du projet -->
+  <article class="project-detail">
+    <a href="../index.html#travail" class="project-detail-back" aria-label="Retour à Mon travail">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <path d="M15 18l-6-6 6-6" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+
+    <p class="project-detail-category" data-i18n="hookit.category">UX/UI Design &amp; Développement front-end & back-end</p>
+    <h1 class="project-detail-title" data-i18n="hookit.title">Création d'une application mobile de crochet</h1>
+
+    <div class="project-detail-intro">
+      <div class="project-detail-hero">
+        <div class="phone-mockup" style="--phone-ratio: 0.40407;">
+          <div class="phone-mockup-screen">
+            <img src="../assets/images/hook_it/hifi/accueil.svg" alt="Écran d'accueil de l'application (hi-fi)">
+          </div>
+        </div>
+      </div>
+
+      <div class="project-detail-body">
+        <div class="project-detail-text">
+          <h2 class="project-detail-app-name">Hook'it</h2>
+          <p data-i18n="hookit.p1">
+            Dans le cadre d'un projet de conception centrée utilisateur, mon équipe et moi avons développé une application dédiée au crochet, une activité en plein essor auprès des jeunes générations.
+            Notre démarche s'est appuyée sur une analyse approfondie de notre cible : entretiens utilisateurs, personas, modélisation UML, puis prototypage Low-Fidelity et High-Fidelity sur Figma, avant le développement de l'application.
+          </p>
+          <p data-i18n="hookit.p2">
+            Mon rôle a consisté à effectuer la recherche utilisateur ainsi que la conception et les tests des prototypes auprès de notre population cible.
+          </p>
+          <p data-i18n="hookit.p3">
+            L'application permet de créer un compte, suivre ses projets en cours, accéder à des tutoriels et partager ses créations.
+            L'accent a été mis sur une interface intuitive, une navigation fluide et des fonctionnalités pensées pour répondre aux besoins réels des utilisateurs.
+          </p>
+        </div>
+
+        <dl class="project-detail-infos">
+          <dt data-i18n="info.type_label">Type</dt>
+          <dd data-i18n="hookit.info.type_value">Projet de groupe (école)</dd>
+          <dt data-i18n="info.role_label">Rôle</dt>
+          <dd data-i18n="hookit.info.role_value">Design UX/UI (Figma), entretiens &amp; développement front-end & back-end</dd>
+          <dt data-i18n="info.year_label">Année</dt>
+          <dd>2026</dd>
+          <dt data-i18n="info.tools_label">Outils</dt>
+          <dd>Figma, Flutter, Dart, CSS</dd>
+        </dl>
+      </div>
+    </div>
+
+    <!-- Écrans de l'application -->
+    <div class="project-detail-gallery-header">
+      <h2 class="project-detail-gallery-title" data-i18n="gallery.title">Galerie</h2>
+      <div class="fidelity-toggle" role="group" aria-label="Choix du niveau de fidélité">
+        <button type="button" class="fidelity-btn active" data-fidelity="hifi" data-i18n="gallery.hifi">Hi-Fi</button>
+        <button type="button" class="fidelity-btn" data-fidelity="lowfi" data-i18n="gallery.lowfi">Low-Fi</button>
+      </div>
+    </div>
+
+    <div class="gallery-carousel" data-fidelity="hifi">
+      <button class="carousel-arrow carousel-prev" aria-label="Capture précédente">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M15 18l-6-6 6-6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <div class="carousel-viewport">
+        <div class="carousel-track project-detail-gallery">
+          <img src="../assets/images/hook_it/hifi/connexion.svg" alt="Écran de connexion (hi-fi)">
+          <img src="../assets/images/hook_it/hifi/accueil.svg" alt="Écran d'accueil (hi-fi)">
+          <img src="../assets/images/hook_it/hifi/forum.svg" alt="Écran forum (hi-fi)">
+          <img src="../assets/images/hook_it/hifi/description.svg" alt="Écran de description du projet (hi-fi)">
+          <img src="../assets/images/hook_it/hifi/recherche.svg" alt="Écran de recherche (hi-fi)">
+          <img src="../assets/images/hook_it/hifi/profil.svg" alt="Écran profil (hi-fi)">
+        </div>
+      </div>
+      <button class="carousel-arrow carousel-next" aria-label="Capture suivante">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M9 18l6-6-6-6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <div class="carousel-dots" role="tablist" aria-label="Navigation de la galerie"></div>
+    </div>
+
+    <div class="gallery-carousel" data-fidelity="lowfi" hidden>
+      <button class="carousel-arrow carousel-prev" aria-label="Capture précédente">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M15 18l-6-6 6-6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <div class="carousel-viewport">
+        <div class="carousel-track project-detail-gallery">
+          <img src="../assets/images/hook_it/lowfi/accueil.svg" alt="Écran d'accueil (low-fi)">
+          <img src="../assets/images/hook_it/lowfi/forum.svg" alt="Écran forum (low-fi)">
+          <img src="../assets/images/hook_it/lowfi/discover.svg" alt="Écran découverte (low-fi)">
+          <img src="../assets/images/hook_it/lowfi/profil.svg" alt="Écran profil (low-fi)">
+          <img src="../assets/images/hook_it/lowfi/creation-patron.svg" alt="Écran de création de patron (low-fi)">
+          <img src="../assets/images/hook_it/lowfi/glossaire.svg" alt="Écran glossaire (low-fi)">
+          <img src="../assets/images/hook_it/lowfi/suivi-projet.svg" alt="Écran de suivi de projet (low-fi)">
+        </div>
+      </div>
+      <button class="carousel-arrow carousel-next" aria-label="Capture suivante">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M9 18l6-6-6-6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <div class="carousel-dots" role="tablist" aria-label="Navigation de la galerie"></div>
+    </div>
+
+    <nav class="project-detail-nav project-detail-nav--next-only">
+      <a href="../esante/index.html">
+        <span class="project-detail-nav-label" data-i18n="nav_arrows.next_label">Suivant &rarr;</span>
+        <span class="project-detail-nav-title" data-i18n="hookit.nav.next_title">Yee-Health</span>
+      </a>
+    </nav>
+  </article>
+
+  <footer class="footer">
+    <p>Fantine Figuet — Portfolio 2026</p>
+  </footer>
+
+  <script src="../assets/js/script.js"></script>
+</body>
+</html>

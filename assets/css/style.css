@@ -1,0 +1,1097 @@
+/* =========================================================
+   VARIABLES / RESET
+========================================================== */
+:root {
+  --color-yellow: #F5D365;
+  --color-blue: #05668D;
+  --color-text: #1E293B;
+  --color-white: #FFFFFF;
+  --color-gray-placeholder: #D9D9D9;
+  --color-gray-placeholder-dark: #BFBFBF;
+  --color-bg-alt: #F2F2F2;
+
+  --font-heading: 'Jura', sans-serif;
+  --font-body: 'Merriweather', serif;
+
+  --max-width: 1200px;
+  --section-padding-y: 4rem;
+  --section-padding-x: 5vw;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background-color: var(--color-white);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* "Fantine Figuet" et les titres de section : police Jura */
+h1, h2 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+h3 {
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+em {
+  font-style: italic;
+}
+
+a {
+  color: var(--color-blue);
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Placeholder gris générique (images / logos à venir) — angle droit */
+.img-placeholder {
+  background-color: var(--color-gray-placeholder);
+  border-radius: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.img-placeholder::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 28%;
+  height: 28%;
+  max-width: 40px;
+  max-height: 40px;
+  background-color: var(--color-gray-placeholder-dark);
+  -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z'/></svg>") center / contain no-repeat;
+  mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z'/></svg>") center / contain no-repeat;
+}
+
+/* =========================================================
+   ÉLÉMENTS COMMUNS (titres, boutons, séparateurs)
+========================================================== */
+.section-title {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  margin-bottom: 2.5rem;
+}
+
+.section-title em {
+  color: var(--color-yellow);
+  font-family: var(--font-body);
+  font-size: 0.8em;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.9rem 2.2rem;
+  border-radius: 0;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  border: 2px solid transparent;
+  text-align: center;
+}
+
+.btn-outline-yellow {
+  border-color: var(--color-yellow);
+  color: var(--color-text);
+  background: transparent;
+}
+.btn-outline-yellow:hover {
+  background-color: var(--color-yellow);
+}
+
+.btn-outline-blue {
+  border-color: var(--color-text);
+  color: var(--color-text);
+  background: transparent;
+}
+.btn-outline-blue:hover {
+  background-color: var(--color-text);
+  color: var(--color-white);
+}
+
+.btn-fill-yellow {
+  background-color: var(--color-yellow);
+  color: var(--color-text);
+}
+.btn-fill-yellow:hover {
+  filter: brightness(0.92);
+}
+
+/* =========================================================
+   BARRE DE MENU
+========================================================== */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--color-white);
+  padding: 1.25rem var(--section-padding-x);
+  border-bottom: 1px solid rgba(30, 41, 59, 0.08);
+}
+
+.navbar-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.navbar-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+  flex-shrink: 0;
+  justify-self: start;
+  min-width: 0;
+}
+
+.navbar-logo-icon {
+  display: block;
+  height: 38px;
+  width: auto;
+  flex-shrink: 0;
+}
+
+.navbar-logo-text {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--color-text);
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+}
+
+.navbar-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  justify-self: center;
+}
+
+.navbar-links a {
+  color: var(--color-text);
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: color 0.25s ease;
+}
+
+.navbar-links a:hover {
+  color: var(--color-blue);
+}
+
+/* Sélecteur de langue (FR / EN) */
+.lang-switch {
+  display: flex;
+  gap: 0.4rem;
+  justify-self: end;
+}
+
+.lang-btn {
+  background: none;
+  border: 1px solid rgba(30, 41, 59, 0.25);
+  color: var(--color-text);
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  padding: 0.3rem 0.55rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.lang-btn:hover {
+  border-color: var(--color-text);
+}
+
+.lang-btn.active {
+  background-color: var(--color-text);
+  border-color: var(--color-text);
+  color: var(--color-white);
+}
+
+/* =========================================================
+   1. HERO
+========================================================== */
+.hero {
+  padding: 0 0 3rem;
+}
+
+/* Mosaïque suspendue depuis le haut ("tombe du plafond"), en pleine largeur
+   d'écran (pas de max-width) : arc inversé (grand -> petit -> grand), chaque
+   image se fondant dans le fond blanc à son extrémité basse. Le titre remonte
+   dans la zone fondue de la mosaïque grâce à la marge négative de .hero-content. */
+.hero-mosaic {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 1rem;
+  padding: 0 10px;
+}
+
+.mosaic-item {
+  flex: 1 1 0;
+  min-width: 0;
+  /* Jaune adouci, même clarté que le fond alterné (--color-bg-alt) */
+  background-color: #F7EFDA;
+  -webkit-mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
+}
+
+/* Hauteurs formant un arc inversé (grand -> petit -> grand) */
+.mosaic-1, .mosaic-7 { height: clamp(170px, 22vw, 250px); }
+.mosaic-2, .mosaic-6 { height: clamp(130px, 18vw, 200px); }
+.mosaic-3, .mosaic-5 { height: clamp(90px, 12vw, 150px); }
+.mosaic-4 { height: clamp(60px, 9vw, 100px); }
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 600px;
+  margin: -3rem auto 0;
+  padding: 0 var(--section-padding-x);
+}
+
+.hero-tagline {
+  color: var(--color-yellow);
+  font-style: italic;
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.hero-title {
+  font-size: clamp(2rem, 5.5vw, 3.5rem);
+  line-height: 1.05;
+  margin-bottom: 0.75rem;
+  white-space: nowrap;
+}
+
+.hero-role {
+  color: var(--color-blue);
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 1.75rem;
+}
+
+/* =========================================================
+   2. SECTION "QUI SUIS-JE ?"
+========================================================== */
+.about {
+  padding: var(--section-padding-y) var(--section-padding-x);
+  /* Fond légèrement plus foncé, en pleine largeur, pour séparer les sections sans trait */
+  background-color: var(--color-bg-alt);
+}
+
+.about-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.about-text p {
+  margin-bottom: 1.25rem;
+  color: var(--color-text);
+}
+
+.about-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.about-image {
+  position: relative;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.about-photo {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  display: block;
+}
+
+.about-photo-accent {
+  position: absolute;
+  bottom: -1.5rem;
+  right: -1.5rem;
+  width: 45%;
+  aspect-ratio: 1 / 1;
+  background-color: var(--color-blue);
+  border-radius: 0;
+  z-index: -1;
+}
+
+/* =========================================================
+   3. SECTION "MON TRAVAIL..."
+========================================================== */
+.work {
+  padding: var(--section-padding-y) var(--section-padding-x);
+}
+
+.work-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.work .section-title {
+  text-align: left;
+}
+
+.carousel {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.carousel-arrow {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid var(--color-text);
+  background: transparent;
+  color: var(--color-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.carousel-arrow:hover {
+  background-color: var(--color-text);
+  color: var(--color-white);
+}
+
+.carousel-viewport {
+  overflow-x: auto;
+  overflow-y: hidden;
+  flex: 1;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.carousel-viewport::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-viewport.is-dragging {
+  scroll-snap-type: none;
+  scroll-behavior: auto;
+  cursor: grabbing;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.project-card-item {
+  flex: 0 0 calc((100% - 3rem) / 3);
+  scroll-snap-align: start;
+}
+
+/* La carte est un vrai lien vers la page du projet (ex: /projet1/) */
+.project-card {
+  display: block;
+  text-align: left;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity 0.25s ease;
+}
+
+.project-card:hover {
+  opacity: 0.85;
+}
+
+.project-image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  margin-bottom: 1rem;
+  object-fit: cover;
+  object-position: top;
+}
+
+.project-image--framed {
+  width: 85%;
+  /* même hauteur que les images pleine largeur (4/3) malgré la largeur réduite */
+  aspect-ratio: 17 / 15;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid rgba(30, 41, 59, 0.12);
+  box-shadow:
+    -6px 0 6px -4px rgba(0, 0, 0, 0.07),
+    6px 0 6px -4px rgba(0, 0, 0, 0.07);
+}
+
+.project-category {
+  color: var(--color-blue);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.25rem;
+}
+
+.project-title {
+  font-size: 1.2rem;
+}
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-top: 2.5rem;
+}
+
+.carousel-dots button {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  border: none;
+  background-color: var(--color-blue);
+  opacity: 0.5;
+  cursor: pointer;
+  padding: 0;
+  transition: width 0.35s ease, background-color 0.25s ease, opacity 0.25s ease;
+}
+
+/* Le point actif s'étire en pilule/rectangle arrondi jaune */
+.carousel-dots button.active {
+  width: 30px;
+  background-color: var(--color-yellow);
+  opacity: 1;
+}
+
+/* =========================================================
+   4. SECTION "COMPÉTENCES"
+========================================================== */
+.skills {
+  padding: var(--section-padding-y) var(--section-padding-x);
+  background-color: var(--color-bg-alt);
+}
+
+.skills-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.skills-title {
+  line-height: 1.2;
+}
+
+/* 4 cards de compétences (Langage, Framework, Design, Autres) */
+.skills-categories {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-bottom: 3.5rem;
+}
+
+.skills-card {
+  border: 1px solid var(--color-blue);
+  padding: 2rem;
+  background-color: var(--color-white);
+}
+
+.skills-card-title {
+  color: var(--color-blue);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+/* Badges "briques" contenant chaque compétence, en flux libre.
+   Même duo de couleurs que les boutons "See my works" / "Say hello",
+   en alternance pour éviter un bloc tout bleu. */
+.skills-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.skill-tag {
+  display: inline-block;
+  padding: 0.5rem 1.1rem;
+  border-radius: 0;
+  border: 1.5px solid transparent;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.skill-tag:nth-child(odd) {
+  background-color: transparent;
+  border-color: var(--color-text);
+  color: var(--color-text);
+}
+
+.skill-tag:nth-child(even) {
+  background-color: transparent;
+  border-color: var(--color-text);
+  color: var(--color-text);
+}
+
+/* =========================================================
+   5. SECTION CONTACT
+========================================================== */
+.contact {
+  padding: var(--section-padding-y) var(--section-padding-x) 2rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.contact-title {
+  text-align: center;
+}
+
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  border: 1px solid rgba(30, 41, 59, 0.15);
+  color: var(--color-text);
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+button.contact-link {
+  width: 100%;
+  background: none;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.contact-link:hover {
+  border-color: var(--color-yellow);
+  background-color: #F7EFDA;
+}
+
+.contact-link-label {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.contact-link-value {
+  color: var(--color-blue);
+  font-size: 0.95rem;
+}
+
+/* =========================================================
+   6. FOOTER
+========================================================== */
+.footer {
+  background-color: var(--color-yellow);
+  padding: 1.5rem var(--section-padding-x);
+  text-align: center;
+}
+
+.footer p {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--color-text);
+}
+
+/* =========================================================
+   7. PAGE PROJET (détail) — utilisé par projetX/index.html
+========================================================== */
+.project-detail-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 2rem var(--section-padding-x) 0;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-text);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.back-link:hover {
+  opacity: 0.75;
+}
+
+.project-detail {
+  padding: 2.5rem var(--section-padding-x) var(--section-padding-y);
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+/* Flèche de retour vers "Mon travail" — pas de libellé, juste l'icône */
+.project-detail-back {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--color-yellow);
+  color: var(--color-text);
+  margin-bottom: 1.5rem;
+  transition: opacity 0.15s ease;
+}
+
+.project-detail-back:hover {
+  opacity: 0.85;
+}
+
+.project-detail-category {
+  color: var(--color-blue);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+}
+
+.project-detail-title {
+  font-size: clamp(1.5rem, 2.8vw, 2.4rem);
+  margin-bottom: 2.5rem;
+  max-width: 900px;
+}
+
+.project-detail-intro {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 3rem;
+  align-items: start;
+  margin-bottom: 3rem;
+}
+
+/* Photo toujours au-dessus du texte, quelle que soit la largeur d'écran (usage ponctuel) */
+.project-detail-intro--stacked {
+  grid-template-columns: 1fr;
+}
+
+.project-detail-intro--stacked .project-detail-hero-media {
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.project-detail-hero {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* Visuel de mise en avant pour un projet qui n'est pas une appli mobile (pas de mock-up téléphone) */
+.project-detail-hero-media {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.project-detail-hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Mock-up téléphone qui encadre la capture d'écran mise en avant :
+   hauteur fixe, largeur calculée en pixels via calc() depuis le ratio exact de
+   l'image (--phone-ratio, passé en style inline par page) — plus fiable que
+   aspect-ratio, calc()/variables CSS étant supportés partout. */
+.phone-mockup {
+  --phone-ratio: 0.4615; /* valeur par défaut si aucun ratio n'est précisé */
+  height: 560px;
+  width: calc(560px * var(--phone-ratio));
+  max-width: 100%;
+  background-color: #111;
+  border-radius: 1.8rem;
+  padding: 0.3rem;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.22);
+  position: relative;
+  display: flex;
+  box-sizing: border-box;
+}
+
+.phone-mockup::before {
+  content: "";
+  position: absolute;
+  top: 0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 28%;
+  height: 0.3rem;
+  border-radius: 999px;
+  background-color: #000;
+  z-index: 1;
+}
+
+/* Enveloppe qui clippe réellement l'écran aux coins arrondis (plus fiable
+   qu'un border-radius directement sur un <img> avec object-fit selon les navigateurs) */
+.phone-mockup-screen {
+  width: 100%;
+  height: 100%;
+  border-radius: 1.5rem;
+  overflow: hidden;
+}
+
+.phone-mockup img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.phone-mockup .img-placeholder {
+  width: 100%;
+  height: 100%;
+  border-radius: 1.5rem;
+}
+
+.project-detail-body {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.project-detail-body p {
+  margin-bottom: 1.25rem;
+}
+
+.project-detail-app-name {
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-yellow);
+}
+
+.project-detail-infos dt {
+  color: var(--color-blue);
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-top: 1.25rem;
+}
+
+.project-detail-infos dt:first-child {
+  margin-top: 0;
+}
+
+.project-detail-infos dd {
+  margin: 0.25rem 0 0;
+}
+
+.project-detail-gallery-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.project-detail-gallery-title {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 700;
+  padding-bottom: 0.4rem;
+  border-bottom: 4px solid var(--color-yellow);
+}
+
+.fidelity-toggle {
+  display: inline-flex;
+  gap: 0.5rem;
+}
+
+.fidelity-btn {
+  border: 1px solid var(--color-text);
+  background: none;
+  border-radius: 999px;
+  padding: 0.4rem 1.1rem;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--color-text);
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.fidelity-btn:hover {
+  border-color: var(--color-yellow);
+}
+
+.fidelity-btn.active {
+  background-color: var(--color-yellow);
+  border-color: var(--color-yellow);
+}
+
+/* Galerie de captures d'écran, avec le même moteur de scroll que le carrousel
+   "Mon travail..." (.gallery-carousel réutilise .carousel-viewport/-track/-dots,
+   .project-detail-gallery fait office de .carousel-track). Contrairement au
+   carrousel de l'accueil, les flèches flottent ici par-dessus les images plutôt
+   que de prendre de la place à côté, pour laisser toute la largeur aux photos. */
+.gallery-carousel {
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+.gallery-carousel[hidden] {
+  display: none;
+}
+
+.gallery-carousel .carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  background-color: var(--color-white);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+}
+
+.gallery-carousel .carousel-prev {
+  left: 0.75rem;
+}
+
+.gallery-carousel .carousel-next {
+  right: 0.75rem;
+}
+
+.gallery-carousel .carousel-arrow:hover {
+  background-color: var(--color-text);
+  color: var(--color-white);
+}
+
+.project-detail-gallery {
+  align-items: flex-start;
+}
+
+.project-detail-gallery img {
+  width: 270px;
+  height: auto;
+  flex-shrink: 0;
+  display: block;
+  scroll-snap-align: start;
+}
+
+.project-detail-gallery .img-placeholder {
+  width: 270px;
+  aspect-ratio: 3 / 4;
+  flex-shrink: 0;
+  background-color: #F5F5F5;
+}
+
+.project-detail-nav {
+  display: flex;
+  justify-content: space-between;
+  opacity: 0.9;
+}
+
+/* Quand un seul lien (premier ou dernier projet), on le pousse du côté attendu */
+.project-detail-nav--next-only {
+  justify-content: flex-end;
+}
+
+.project-detail-nav--prev-only {
+  justify-content: flex-start;
+}
+
+.project-detail-nav a {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.project-detail-nav a:hover {
+  color: var(--color-blue);
+}
+
+.project-detail-nav-label {
+  display: block;
+  color: var(--color-yellow);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.35rem;
+  font-weight: 600;
+}
+
+.project-detail-nav-title {
+  display: block;
+  color: var(--color-blue);
+  font-weight: 600;
+}
+
+/* =========================================================
+   RESPONSIVE — TABLETTE
+========================================================== */
+@media (max-width: 900px) {
+  :root {
+    --section-padding-y: 3rem;
+  }
+
+  /* Plus assez de place pour le logo + le nom complet : on ne garde que le logo */
+  .navbar-logo-text {
+    display: none;
+  }
+
+  .about-inner {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .about-image {
+    order: -1;
+    max-width: 320px;
+  }
+
+  .project-card-item {
+    flex: 0 0 calc((100% - 1.5rem) / 2);
+  }
+
+  .skills-categories {
+    grid-template-columns: 1fr;
+  }
+
+  .project-detail-intro {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .phone-mockup {
+    height: 400px;
+    width: calc(400px * var(--phone-ratio));
+  }
+}
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+========================================================== */
+@media (max-width: 600px) {
+  :root {
+    --section-padding-y: 2.5rem;
+    --section-padding-x: 6vw;
+  }
+
+  .navbar-inner {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 1rem;
+  }
+
+  .navbar-logo,
+  .lang-switch {
+    justify-self: center;
+  }
+
+  .navbar-links {
+    justify-content: center;
+    gap: 0.75rem 1.25rem;
+  }
+
+  .hero-mosaic {
+    gap: 6px;
+  }
+
+  /* Sur mobile, on ne garde que 3 images : les 2 extrêmes (hautes)
+     et celle du centre (basse) pour garder l'arc inversé lisible */
+  .mosaic-2,
+  .mosaic-3,
+  .mosaic-5,
+  .mosaic-6 {
+    display: none;
+  }
+
+  .work .section-title {
+    text-align: center;
+  }
+
+  .project-card-item {
+    flex: 0 0 100%;
+  }
+
+  .about-buttons {
+    flex-direction: column;
+  }
+
+  .about-buttons .btn {
+    width: 100%;
+  }
+
+  .skills-card {
+    padding: 1.5rem;
+  }
+
+  .carousel {
+    gap: 0.75rem;
+  }
+
+  .carousel-arrow {
+    width: 40px;
+    height: 40px;
+  }
+
+  .contact-form {
+    padding: 1.75rem 1.25rem;
+  }
+
+  .project-detail-gallery img {
+    width: 200px;
+  }
+
+  .project-detail-gallery .img-placeholder {
+    width: 200px;
+  }
+}
