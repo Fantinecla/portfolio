@@ -174,7 +174,7 @@ img {
 
 .navbar-logo-icon {
   display: block;
-  height: 38px;
+  height: 44px;
   width: auto;
   flex-shrink: 0;
 }
@@ -207,11 +207,17 @@ img {
   color: var(--color-blue);
 }
 
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-self: end;
+}
+
 /* Sélecteur de langue (FR / EN) */
 .lang-switch {
   display: flex;
   gap: 0.4rem;
-  justify-self: end;
 }
 
 .lang-btn {
@@ -235,6 +241,65 @@ img {
   background-color: var(--color-text);
   border-color: var(--color-text);
   color: var(--color-white);
+}
+
+/* Sous-menu déroulant pour la langue, dans le menu déroulant mobile
+   (masqué par défaut : ne s'affiche qu'à partir du breakpoint où le menu
+   principal passe en hamburger, voir RESPONSIVE — TABLETTE) */
+.navbar-lang-dropdown {
+  display: none;
+}
+
+.navbar-lang-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: none;
+  border: 1px solid rgba(30, 41, 59, 0.25);
+  color: var(--color-text);
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+}
+
+.navbar-lang-options {
+  display: none;
+  flex-direction: column;
+  margin-top: 0.5rem;
+}
+
+.navbar-lang-options.is-open {
+  display: flex;
+}
+
+.navbar-lang-options .lang-btn {
+  width: 100%;
+  text-align: left;
+  padding: 0.6rem 0.75rem;
+  border-top: none;
+}
+
+.navbar-lang-options .lang-btn:first-child {
+  border-top: 1px solid rgba(30, 41, 59, 0.25);
+}
+
+/* Bouton hamburger : masqué tant que les liens tiennent sur une ligne.
+   Taille standardisée sur celle du logo-icon (44px) pour un rendu cohérent. */
+.navbar-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: none;
+  border: none;
+  color: var(--color-text);
+  cursor: pointer;
+  padding: 0;
+  flex-shrink: 0;
 }
 
 /* =========================================================
@@ -982,7 +1047,9 @@ button.contact-link {
     --section-padding-y: 3rem;
   }
 
-  /* Plus assez de place pour le logo + le nom complet : on ne garde que le logo */
+  /* Étape 1 → 2 : plus assez de place pour le logo + le nom complet, mais les
+     liens et le choix de la langue tiennent encore sur une ligne : on ne
+     garde que le logo-icon, tout le reste (liens + langue) reste inline. */
   .navbar-logo-text {
     display: none;
   }
@@ -1017,28 +1084,58 @@ button.contact-link {
 }
 
 /* =========================================================
+   RESPONSIVE — NAV EN MENU DÉROULANT
+   Étape 2 → 3 : même le logo-icon seul ne suffit plus à laisser assez de
+   place aux liens + à la langue sur une ligne : on bascule sur le hamburger.
+========================================================== */
+@media (max-width: 700px) {
+  .navbar-toggle {
+    display: flex;
+  }
+
+  .navbar-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    background-color: var(--color-white);
+    border-bottom: 1px solid rgba(30, 41, 59, 0.08);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.08);
+    padding: 0.5rem var(--section-padding-x) 1rem;
+  }
+
+  .navbar-links.is-open {
+    display: flex;
+  }
+
+  .navbar-links a {
+    width: 100%;
+    padding: 0.75rem 0;
+  }
+
+  /* Le choix de la langue passe dans le menu déroulant plutôt que dans la barre compacte */
+  .navbar-right .lang-switch {
+    display: none;
+  }
+
+  .navbar-lang-dropdown {
+    display: block;
+    margin-top: 0.75rem;
+    width: 100%;
+  }
+}
+
+/* =========================================================
    RESPONSIVE — MOBILE
 ========================================================== */
 @media (max-width: 600px) {
   :root {
     --section-padding-y: 2.5rem;
     --section-padding-x: 6vw;
-  }
-
-  .navbar-inner {
-    grid-template-columns: 1fr;
-    justify-items: center;
-    gap: 1rem;
-  }
-
-  .navbar-logo,
-  .lang-switch {
-    justify-self: center;
-  }
-
-  .navbar-links {
-    justify-content: center;
-    gap: 0.75rem 1.25rem;
   }
 
   .hero-mosaic {
